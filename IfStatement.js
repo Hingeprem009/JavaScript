@@ -8,8 +8,8 @@ else
 }
 
 // Check if the person is old enough to drive
-let age = 18;
-if(age >= 19)
+let age = 17;
+if(age >= 18)
 {
     console.log("You can drive!");
 }
