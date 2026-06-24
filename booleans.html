@@ -32,6 +32,26 @@
         console.log(!false); //true
         
         
+        if (0) {
+            console.log('truthy');
+        }
+
+        const cartQuantity = 5;
+        if (cartQuantity) {
+            console.log('cart has products');
+        }
+
+        console.log('hello' / 5); // NaN (Not a number)
+        let variable1; // we can't use const to use need to assign value 
+        console.log(variable1); // undefined 
+        //Falsy Values
+        // false 0 '' NaN undefined null
+        // Any value not on this list is truthy
+        // We can also use truthy and falsy with logical operators 
+
+        //Ternary Operator ?:
+        const result = true ? 'truthy' : 'falsy';
+        console.log(result); // truthy (short cut of if else statement)
 
     </script>
 </body>
