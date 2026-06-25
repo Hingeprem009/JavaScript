@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // Creating an object 
+        // object lets us group multiple values together
+        const product = {
+            name: 'socks', // These are property-value pairs
+            price: 1000
+        };
+        console.log(typeof product); //object
+        console.log(product);
+        console.log(product.name); // Access individual propetry using Dot notation
+        console.log(product.price);
+
+        product.name = 'Pen'; // Changing the property
+        console.log(product);
+
+        product.newProperty = true; // To add new property
+        console.log(product);
+
+        delete product.newProperty; //To delete property
+        console.log(product);
+
+        //Use of object helps use to group and use multiple values together
+
+        const product2 = {
+            name: 'shirt',
+            ['delivery-time']: '1 day',
+            rating: { // Nested Object
+                stars: 4.5,
+                count: 87
+            },
+            fun: function function1() {
+                console.log('function inside object');
+            }
+        };
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']); //Bracket Notation same as dot notation
+        // such as property names containing '-'. JavaScript interprets '-' as subtraction.
+        console.log(product2['delivery-time']);
+
+        console.log(product2.rating.count); //87
+
+        console.log(typeof console.log); //function
+        console.log(typeof console); // object
+        // Function inside object = Method
+
+        // JSON is similar to objects with fewer features
+        // 1. Don't support function
+        // 2. Must use " " not support ' '
+        // 3. More universal understand by every programming language
+
+        // Built-in JSON Object
+        // Convert: JavaScript Object -> JSON
+
+        //To convert product2 to JSON
+        //console.log(JSON.stringify(product2)); //Will not run bz product2 have function in it
+
+        const product3 = {
+            name: 'Toy',
+            ['delivery-time']: '5 day',
+        };
+
+        console.log(JSON.stringify(product3));
+
+        //To convert JSCPN JavaScript Object
+
+        const jsonString = JSON.stringify(product3);
+        console.log(JSON.parse(jsonString));
+
+        //LocalStorage 
+        //-Save values more permanently
+
+        //localStorage.setItem('score', JSON.stringify(score)); //convert object into a JSON Strings
+        //let score = JSON.parse(localStorage.getItem('score')); //convert back to object
+
+        //Auto-Boxing
+        console.log('hello'.length);//5
+        console.log('hello'.toUpperCase()); //HELLO
+
+        //Objects are references
+        const object1 = { //even const we can change values bz of reference 
+            message: 'hello'
+        };
+        const object2 = object1; //Copy by Reference
+
+        object1.message = 'Good-job!';
+        console.log(object1); //Good job!
+        console.log(object2); //Good job!
+
+        const object3 = {
+            message: 'Good job!'
+        };
+        console.log(object3 === object1); // false (compares the references, not the values inside)
+        console.log(object2 === object1); // true
+
+        const object4 = {
+            message: 'Good job!',
+            price: 455
+        };
+        // const message = object4.message; //Method 1
+        //if value and property name are same we have shortcut ->
+        const { message, price } = object4; //destructuring //Method 2 (easier way to take properties out of an object)
+        console.log(message); //Good job!
+        console.log(price); //455
+
+        //Shorthand Property
+        const object5 = {
+            //message: message
+            message,
+            //method: function function1() {
+            //    console.log('method');
+            //}
+            method() { //shorthand method 
+                console.log('method');
+            }
+        };
+        console.log(object5);
+        object5.method();
+    </script>
+</body>
+</html>
